@@ -1,0 +1,32 @@
+[
+  {
+    "barcode": "9313820004501",
+    "name": "7Up Lemonade Soda, 1.25 Litre",
+    "standardprice": 2.8,
+    "specialprice": 2.5
+  },
+  {
+    "barcode": "9300675009775",
+    "name": "Coca Cola Diet Coke",
+    "standardprice": 3.7,
+    "specialprice": null
+  },
+  {
+    "barcode": "9339423008845",
+    "name": "Abbott's Bakery Sourdough Rye Loaf , 760 Gram",
+    "standardprice": 6.75,
+    "specialprice": 4.5
+  },
+  {
+    "barcode": "9300619513023",
+    "name": "Aeroplane Jelly Lite Lime, 2 Each",
+    "standardprice": 2.45,
+    "specialprice": 2
+  },
+  {
+    "barcode": "9300632064168", 
+    "name": "Ajax Professional Antibacterial Disinfectant Bathroom Clean, 500 Millilitre",
+    "standardprice": 5.8,
+    "specialprice": null
+  }
+ ]
