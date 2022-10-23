@@ -26,7 +26,7 @@ func getProducts(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, product.GetProducts())
 }
 
-// postPricing adds an album from JSON received in the request body.
+// Procesees pricing data for products received in the request body as JSON
 func postPricing(c *gin.Context) {
 
 	var productPricing []product.Product

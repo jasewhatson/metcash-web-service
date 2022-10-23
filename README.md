@@ -50,7 +50,9 @@ Data persistence is provided via [SQLite](https://en.wikipedia.org/wiki/SQLite).
 
 **Validation** for the /pricing JSON payload is done via the _gin_ package and will result in an 'HTTP/1.1 400 Bad Request' response if there are any errors in the provided in the JSON payload such as syntax or wrong data type. Also if the value for _standardprice_ is provided as null or zero, 'HTTP/1.1 400 Bad Request' is returned. This is tested in the unit test _TestPostPricingInvalid_ 
 
-From the requirements doc, _If a price already exists for this product and is not in the API call it should be deleted_
+## Need clarification on requirements 
+
+From the requirements doc, it says _'If a price already exists for this product and is not in the API call it should be deleted'_
 
 I am not sure what is meant by this. It should be deleted from where? 
-If this is required, can you please clarify what is meant by this so I can add it to the project? Thanks
+If this is required in my implementation, can you please clarify what is meant by this so I can add it to the project? Thanks
