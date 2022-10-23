@@ -42,7 +42,7 @@ Alternative to running the unit tests above. We can manually test the web servic
 
 ## Documentation
 
-The requirements do not specify what to do on _POST /pricing_ if an unknown product (one which is not in the DB) is in the request. So, for this scenario, I return _status = "notfound"_ for this product. Alternatively, we could just silently ignore the product update.
+The requirements do not specify what to do on _POST /pricing_ if an unknown product (one which is not in the DB) is in the request. So, for this scenario, I return _status = "notfound"_ for this product. Alternatively, we could just silently ignore this product from the update.
 
 Data persistence is provided via [SQLite](https://en.wikipedia.org/wiki/SQLite). With the database file for our project called _products.db_
 
