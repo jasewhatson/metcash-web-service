@@ -40,6 +40,8 @@ Alternative to running the unit tests above. We can manually test the web servic
 
 >curl http://localhost:8880/pricing --include --header "Content-Type: application/json" --request "POST" --data-binary "@../Prices.json"
 
+Extra note: Making manual POST /pricing calls via curl will upset the expected results in *main_test.go* for the first run. However, subsequent runs of _go test_ will succeed as _TestPostPricing_ will put the prices back in sync with the expected results  
+
 ## Documentation
 
 The requirements do not specify what to do on _POST /pricing_ if an unknown product (one which is not in the DB) is in the request. So, for this scenario, I return _status = "notfound"_ for this product. Alternatively, we could just silently ignore this product from the update.
@@ -48,7 +50,7 @@ Data persistence is provided via [SQLite](https://en.wikipedia.org/wiki/SQLite).
 
 **Error and failure handling** 
 
-In our product package errors are handled by checking the result of appropriate calls to things like DB reads/writes via calling checkErr(). If an error is found, panic and print the error msg & stack trace. Alternatively, we good log the error here. 
+In our product package errors are handled by checking the result of appropriate calls to things like DB reads/writes via calling checkErr(). If an error is found, panic and print the error msg & stack trace. Alternatively, we could log the error in checkErr(). 
 
 **Validation** 
 
@@ -60,3 +62,5 @@ From the requirements doc, it says _'If a price already exists for this product 
 
 I am not sure what is meant by this. It should be deleted from where? 
 If this is required in my implementation, can you please clarify what is meant by this so I can add it to the project? Thanks
+
+
