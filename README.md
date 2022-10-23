@@ -52,7 +52,7 @@ In our product package errors are handled by checking the result of appropriate 
 
 **Validation** 
 
-For the /pricing JSON payload is done via the _gin_ package and will result in an 'HTTP/1.1 400 Bad Request' response if there are any errors in the provided JSON payload such as syntax or wrong data type. Also if the value for _standardprice_ is provided as null or zero, 'HTTP/1.1 400 Bad Request' is returned. This is tested in the unit test _TestPostPricingInvalid_ 
+For the _/pricing_ JSON payload is done via the _gin_ package and will result in an 'HTTP/1.1 400 Bad Request' response if there are any errors in the provided JSON payload such as syntax or wrong data type. Also if the value for _standardprice_ is provided as null or zero, 'HTTP/1.1 400 Bad Request' is returned. This is tested in the unit test _TestPostPricingInvalid_ 
 
 ## Need clarification on requirements 
 
