@@ -46,9 +46,13 @@ The requirements do not specify what to do on _POST /pricing_ if an unknown prod
 
 Data persistence is provided via [SQLite](https://en.wikipedia.org/wiki/SQLite). With the database file for our project called _products.db_
 
-**Error and failure handling** in our product package errors are handled by checking the result of appropriate calls to things like DB reads/writes via calling checkErr(). If an error is found, panic and print the error msg & stack trace. Alternatively, we good log the error here. 
+**Error and failure handling** 
 
-**Validation** for the /pricing JSON payload is done via the _gin_ package and will result in an 'HTTP/1.1 400 Bad Request' response if there are any errors in the provided in the JSON payload such as syntax or wrong data type. Also if the value for _standardprice_ is provided as null or zero, 'HTTP/1.1 400 Bad Request' is returned. This is tested in the unit test _TestPostPricingInvalid_ 
+In our product package errors are handled by checking the result of appropriate calls to things like DB reads/writes via calling checkErr(). If an error is found, panic and print the error msg & stack trace. Alternatively, we good log the error here. 
+
+**Validation** 
+
+For the /pricing JSON payload is done via the _gin_ package and will result in an 'HTTP/1.1 400 Bad Request' response if there are any errors in the provided JSON payload such as syntax or wrong data type. Also if the value for _standardprice_ is provided as null or zero, 'HTTP/1.1 400 Bad Request' is returned. This is tested in the unit test _TestPostPricingInvalid_ 
 
 ## Need clarification on requirements 
 
