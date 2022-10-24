@@ -14,8 +14,8 @@ type Product struct {
 	SKU           string  `json:"sku"`
 	Barcode       string  `json:"barcode"`
 	Name          string  `json:"name"`
-	StandardPrice float32 `json:"standardprice" binding:"required"`
-	SpecialPrice  float32 `json:"specialprice"`
+	StandardPrice float64 `json:"standardprice" binding:"required"`
+	SpecialPrice  float64 `json:"specialprice"`
 }
 
 type ProductPriceUpdateStatus struct {
@@ -40,7 +40,7 @@ func GetProducts() []Product {
 		prod := Product{}
 		err = rows.Scan(&prod.SKU, &prod.Barcode, &prod.Name, &prod.StandardPrice, &specialPrice)
 		if specialPrice.Valid { //Handle null / empty special price in DB
-			prod.SpecialPrice = float32(specialPrice.Float64)
+			prod.SpecialPrice = specialPrice.Float64
 		} else {
 			prod.SpecialPrice = 0
 		}
@@ -97,7 +97,7 @@ func UpdateProductsPricing(products []Product) []ProductPriceUpdateStatus {
 
 // Checks if the products record needs a price update
 // Returns true if count <= 0 (did not find same record). Otherwise returns false
-func doesRecordNeedPriceUpdate(barcode string, StandardPrice float32, SpecialPrice float32) bool {
+func doesRecordNeedPriceUpdate(barcode string, StandardPrice float64, SpecialPrice float64) bool {
 
 	count := -1
 
