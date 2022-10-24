@@ -96,7 +96,7 @@ func UpdateProductsPricing(products []Product) []ProductPriceUpdateStatus {
 }
 
 // Checks if the products record needs a price update
-// Returns true if count <= 0 (found same record). Otherwise returns false
+// Returns true if count <= 0 (did not find same record). Otherwise returns false
 func doesRecordNeedPriceUpdate(barcode string, StandardPrice float32, SpecialPrice float32) bool {
 
 	count := -1
